@@ -1,8 +1,11 @@
 <?php
 
-require_once "Figure.php";
-class Rectangle extends Figure
+require_once "Trait/Color.php";
+
+class Rectangle
 {
+    use Color;
+    private string $color;
     private float|int $height;
     private float|int $weight;
 

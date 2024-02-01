@@ -1,12 +1,15 @@
 <?php
 
-require_once "Figure.php";
-class Circle extends Figure
+require_once "Trait/Color.php";
+
+class Circle
 {
+    use Color;
+    private string $color;
     private float|int $radius;
     public function __construct(float|int $radius)
     {
-           $this->setRadius($radius);
+        $this->setRadius($radius);
     }
 
     /**
@@ -38,7 +41,7 @@ class Circle extends Figure
     protected function perimeter() : float|int
     {
         $radius = $this->getRadius();
-       return  2 * M_PI * $radius;
+        return  2 * M_PI * $radius;
     }
 
     public function getCircleInfo() : void
@@ -47,5 +50,4 @@ class Circle extends Figure
             "Периметр: " . $this->perimeter() . PHP_EOL .
             "Площа: " . $this->area() . PHP_EOL ;
     }
-
 }
